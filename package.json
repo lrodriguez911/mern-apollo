@@ -1,0 +1,25 @@
+{
+  "name": "mern-apollo",
+  "version": "1.0.0",
+  "description": "project using stack mern and graphql",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node server/index.js",
+    "test": "npm test"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "mongodb",
+    "express",
+    "apollo",
+    "graphql"
+  ],
+  "author": "Lucas M. Rodriguez",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
