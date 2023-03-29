@@ -23,7 +23,7 @@ export const typeDefs = gql`
     type Task{
         _id: ID
         title: String
-        projectId: String
+        projectId: ID
         createdAt: String
         updatedAt: String
     }

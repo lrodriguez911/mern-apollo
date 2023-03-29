@@ -10,15 +10,17 @@ export const resolvers = {
     Mutation: {
         createProject: async (_, {name, description}) =>{
             const project = new Project({name, description})
-            const saveproject = await project.save()
+            const savedProject = await project.save()
             console.log(name, description);
-            return saveproject;
-        }
-        createTask: async (_, {title, description}) =>{
-            const project = new Project({name, description})
-            const saveproject = await project.save()
-            console.log(name, description);
-            return saveproject;
+            return savedProject;
+        },
+        createTask: async (_, {title, projectId}) =>{
+            const projectFound = await Project.findById(projectId)
+            if(!projectFound) throw new Error("Project not found")
+            const task = new Task({title, projectId})
+            const taskSaved = await task.save()
+            console.log(title, projectId);
+            return taskSaved;
         }
     }
 }
