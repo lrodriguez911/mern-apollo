@@ -5,6 +5,7 @@ import { MONGODB_URI } from './config.js'
 
 export const connectDB = async ()=>{
     try {
+        mongoose.set("strictQuery", false)
         const connec = await mongoose.connect(MONGODB_URI)
         console.log(`MongoDB connected: ${connec.connection.name}`);
     } catch (error) {
