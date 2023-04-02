@@ -6,7 +6,7 @@ export function TaskForm() {
 
   const [createTask] = useMutation(CREATE_TASK, {
     refetchQueries: [
-        
+        'getProject'
     ]
   })  
   const params = useParams()
@@ -18,7 +18,9 @@ export function TaskForm() {
             title: e.target.values,
             projectId: params.id
         }
-    })
+    });
+    e.target.reset()
+    e.target.focus()
   };
 
   return (

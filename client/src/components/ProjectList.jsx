@@ -9,8 +9,11 @@ export function ProjectList() {
     if (loading) return <p>Loading</p>
     if (error) return <p>Error</p>
     return (
-        data.projects.map( project => (
+        <div className='overflow-y-auto w-full px-5'>
+            {data.projects.map( project => (
             <ProjectCard key={project._id} project={project}/>
-        ))
+        ))}
+
+        </div>
     )
 }
